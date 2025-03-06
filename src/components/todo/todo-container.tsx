@@ -217,14 +217,14 @@ export function TodoContainer() {
                 <div className="grid grid-cols-1 sm:grid-cols-3 gap-3">
                   <div>
                     <Select 
-                      value={filterCategory || ''} 
-                      onValueChange={(value) => setFilterCategory(value || null)}
+                      value={filterCategory || 'all_categories'} 
+                      onValueChange={(value) => setFilterCategory(value === 'all_categories' ? null : value)}
                     >
                       <SelectTrigger>
                         <SelectValue placeholder="カテゴリー: 全て" />
                       </SelectTrigger>
                       <SelectContent>
-                        <SelectItem value="">カテゴリー: 全て</SelectItem>
+                        <SelectItem value="all_categories">カテゴリー: 全て</SelectItem>
                         {categories.map((category) => (
                           <SelectItem key={category.id} value={category.id}>
                             <div className="flex items-center">
@@ -242,14 +242,14 @@ export function TodoContainer() {
                   
                   <div>
                     <Select 
-                      value={filterPriority || ''} 
-                      onValueChange={(value) => setFilterPriority(value as Priority || null)}
+                      value={filterPriority || 'all_priorities'} 
+                      onValueChange={(value) => setFilterPriority(value === 'all_priorities' ? null : value as Priority)}
                     >
                       <SelectTrigger>
                         <SelectValue placeholder="優先度: 全て" />
                       </SelectTrigger>
                       <SelectContent>
-                        <SelectItem value="">優先度: 全て</SelectItem>
+                        <SelectItem value="all_priorities">優先度: 全て</SelectItem>
                         <SelectItem value="LOW">低</SelectItem>
                         <SelectItem value="MEDIUM">中</SelectItem>
                         <SelectItem value="HIGH">高</SelectItem>
