@@ -7,8 +7,8 @@
 ## 技術スタック
 
 - TypeScript ^5.0.0
-- Next.js ^15.1.3
-- React ^19.0.0
+- Next.js ^14.1.0
+- React ^18.2.0
 - Tailwind CSS ^3.4.17
 - shadcn/ui ^2.1.8
 - SQLite ^3.0.0
