@@ -1,4 +1,5 @@
-import { Priority } from '@prisma/client';
+// Priority型の定義を追加
+export type Priority = 'LOW' | 'MEDIUM' | 'HIGH';
 
 export interface TodoItem {
   id: string;
