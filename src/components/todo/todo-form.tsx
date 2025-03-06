@@ -164,14 +164,14 @@ export function TodoForm({
             <div className="space-y-2">
               <label className="text-sm font-medium">カテゴリー</label>
               <Select 
-                value={categoryId || ''} 
-                onValueChange={(value) => setValue('categoryId', value || null)}
+                value={categoryId || 'none'} 
+                onValueChange={(value) => setValue('categoryId', value === 'none' ? null : value)}
               >
                 <SelectTrigger>
                   <SelectValue placeholder="カテゴリーを選択" />
                 </SelectTrigger>
                 <SelectContent>
-                  <SelectItem value="">なし</SelectItem>
+                  <SelectItem value="none">なし</SelectItem>
                   {categories.map((category) => (
                     <SelectItem key={category.id} value={category.id}>
                       <div className="flex items-center">
